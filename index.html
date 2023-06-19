@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ...existing code... -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Portfolio</title>
+    <style>
+        /* ...existing styles... */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* font-family: 'Josefin Sans', sans-serif; */
+            font-family: 'Poppins', sans-serif;
+            max-height: 100vh;
+            background-color: #1F252E;
+        }
+
+        /*nav */
+        header {
+            padding: 1.7rem 1rem;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            max-width: 80%;
+            margin: auto;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: .97rem;
+            font-weight: 600;
+            letter-spacing: .7px;
+            padding: 1rem;
+            padding: 0.4rem 1rem;
+        }
+
+        nav a.active,
+        nav a:hover {
+            color: #00E8F8;
+            border-radius: 1rem;
+            transition: all.3s ease-in-out;
+        }
+
+        #click {
+            display: none;
+        }
+
+        .menu i {
+            color: #00E8F8;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        /* Nav */
+
+        section {
+            margin: 2rem 8.5rem;
+            ;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5rem auto;
+        }
+
+        .main h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #30fffc;
+            /* animation: check 1s ease forwards;
+            animation-delay: .1s; */
+        }
+
+        .main p {
+            margin-top: 1rem;
+            font-size: .98rem;
+            color: #fff;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-top: 1.7rem;
+        }
+
+        .social a {
+            color: #00E8F8;
+            font-size: 1rem;
+            border: 1.6px solid #00E8F8;
+            border-radius: 50%;
+            padding: .35rem;
+            text-align: center;
+            width: 26px;
+        }
+
+        .social a:hover {
+            color: #1F252E;
+            background-color: #00E8F8;
+            box-shadow: 0 0 20px #00E8F8;
+            transition: all .3s ease-in-out;
+        }
+
+
+        .main h1 span:nth-child(1) {
+            font-size: 1.5rem;
+        }
+
+        .main h1 span:nth-child(2) {
+            color: #00E8F8;
+        }
+
+        .images {
+            /* ...existing styles... */
+
+            background-image: url(/img/graph5.png);
+            background-repeat: no-repeat;
+            background-position: 0 -75px;
+            -webkit-box-shadow: 0 10px 10px -10px #000000;
+            -moz-box-shadow: 0 10px 10px -10px #000000;
+            box-shadow: 0px 16px 4px -10px #00E8F8;
+            width: 528px;
+            background-size: cover;
+        }
+
+        /* @keyframes check {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        } */
+
+        @media only screen and (max-width:480px) {
+            .menu {
+                display: block;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #244D61;
+            }
+
+            header {
+                color: #59ff00;
+                padding: 0.7rem 1rem;
+                align-items: center;
+                max-width: 100%;
+            }
+
+            nav {
+                position: absolute;
+                display: grid;
+                top: 75px;
+                text-align: center;
+                background-color: #1F252E;
+                left: -100%;
+                z-index: 1;
+                width: 100%;
+            }
+
+            #click:checked~nav {
+                left: 0%;
+                transition: all 0.3s ease;
+            }
+
+            section {
+                margin: 1rem 1.5rem;
+            }
+
+        }
+
+        .photos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.7rem;
+        }
+
+        .photos a {
+            display: inline-block;
+        }
+
+        .photos img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.7rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        div{
+
+            color: #ff0909;
+        }
+        h1{
+            color: #59ff00;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <!-- ...existing code... -->
+    <header>
+        <div class="logo">
+            <img src="img/logob.jpg" alt="" width="50%"> Logo</a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="mainicon">
+            <div class="menu">
+                <i class="bi bi-list"></i>
+            </div>
+        </label>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="img/bhati_img8.jpg">Photo1 </a>
+            <a href="img/bhati_img4.jpg"> Photo2</a>
+            <a href="img/bhati_img9.jpg">Photo3</a>
+            <a href="img/bhati_video.mp4">Video</a>
+            <img src="img/bhati_poster.jpg"  width="500">
+            
+        </nav>
+    </header>
+    <section>
+        <div class="main">
+            <div class="detail"><!---Sarah -->
+                <h1>  WELCOME  TO BHATI LIBRARY  EDUCATION SOCIETY<br> <span style="color:#00E8F8;"> </span> </h1>
+            <p>   <br> "Bhati Library is a self-study point located in Meerapur, Muzaffarnagar district. It offers the best facilities, including a reliable internet connection, air conditioning, and power backup. The library operates from 7:00 AM to 10:00 PM. Bhati Library has additional centers in Morna and Behsuma that provide excellent computer facilities. It also offers certification courses under the Kausal Vikas Yojana for students."</p>
+                <p> <br>"भाटी पुस्तकालय मीरापुर, मुजफ्फरनगर जिले में स्थित एक स्व-अध्ययन केंद्र है। इसमें इंटरनेट कनेक्शन, एयर कंडीशनिंग और पावर बैकअप जैसी सर्वोत्तम सुविधाएं उपलब्ध हैं। पुस्तकालय का समय सुबह 7:00 बजे से रात 10:00 बजे तक चलता है। भाटी पुस्तकालय के मोरना और बेहसुमा में अत्यधिक कंप्यूटर सुविधाएं उपलब्ध हैं। यह छात्रों के लिए कौशल विकास योजना के तहत प्रमाणीकरण पाठ्यक्रम भी प्रदान करता है।" </p>
+                <!-- ...existing content... -->
+                <div class="images">
+                    <img src="img/bhati_img4.jpg" alt="" width="50%">
+                </div>
+                <div class="photos">
+                    <a href="img/bhati_img1.jpg"> <img src="img/bhati_img1.jpg" alt=""></a>
+                    <a href="img/bhati_img2.jpg"><img src="img/bhati_img2.jpg" alt=""></a>
+                </div>
+            
+            </div>
+            <div class="social">
+                
+                <a href="https://www.instagram.com/owner_bhati_library"><i class="bi bi-instagram"></i></a>
+                
+                <a href="https://www.facebook.com/ankurbhati456?mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+            <div class="images">
+                <img src="img/bhati_img10.jpg" alt="" width="50%">
+            </div>
+        </div>
+    </section>
+
+    <!-- ...existing code... -->
+    
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+</style>
+<!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+  </style> -->
+
+   <!-- ...existing code... -->
+
+<!-- ...existing code... -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about">
+
+                  <h2> Director  Rajnesh Bhati (Ankur Bhati)</h2>
+                  <h2> Co Director Shubham Bhati </h2>
+                    <span style="color: #fff;"class="bi bi-geo-alt-fill"></i> Meerapur, India </span>
+                    <span style="color: aliceblue;" class="bi bi-envelope-fill"></i> bhatilibrary95@gmail.com|(8126199819),(6395070498)</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                
+            </div>
+            <div class="footer-section social">
+                <h3 style="color: #fff ;">  Follow Us</h3>
+                <div class="social-icons">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p style="color: rgb(255, 1, 1)"> 2023 Your Company. All rights reserved.</p>
+        </div> 
+</footer>
+<!-- ...existing code... -->
+
+</body>
+
+</html>
